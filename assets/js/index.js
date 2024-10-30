@@ -5,7 +5,7 @@ const newAlarm = document.querySelector('.new-alarm p');
 const setAlarmButton = document.querySelector('.Set-alarm');
 const hourInput = document.querySelector('input[placeholder="HH"]');
 const minuteInput = document.querySelector('input[placeholder="MM"]');
-const alarmSound = new Audio('path/to/your/alarm-sound.mp3');
+const alarmSound = new Audio('./assets/audio/alarm-sound.mp3');
 
 newAlarm.textContent = '00:00';
 
