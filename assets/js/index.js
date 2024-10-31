@@ -46,7 +46,25 @@ function setAlarmTime() {
     minuteInput.value = '';
 }
 
+function validateHourInput(event) {
+    const value = event.target.value; // this will help me capture the current 
+    //value of the input field when it is entered
+    if (isNaN(value) || value < 0 || value > 24) {
+        event.target.value = '';
+    }
+}
+
+function validateMinuteInput(event) {
+    const value = event.target.value;
+    if (isNaN(value) || value < 0 || value > 59) {
+        event.target.value = '';
+    }
+}
+
+hourInput.addEventListener('input', validateHourInput);
+minuteInput.addEventListener('input', validateMinuteInput);
+
 updateClock();
-setInterval(updateClock, 60000);
+setInterval(updateClock, 1000);
 
 setAlarmButton.addEventListener('click', setAlarmTime);
